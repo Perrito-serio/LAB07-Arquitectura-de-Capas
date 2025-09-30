@@ -1,0 +1,6 @@
+@Lab07_MunozHerrera_HostAddress = http://localhost:5236
+
+GET {{Lab07_MunozHerrera_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
