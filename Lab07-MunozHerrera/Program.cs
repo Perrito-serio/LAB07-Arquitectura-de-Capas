@@ -30,6 +30,11 @@ app.UseAuthorization();
 // ¡El orden importa! Lo ponemos antes de que las peticiones lleguen a los controladores.
 app.UseMiddleware<ParameterValidationMiddleware>();
 
+// 3. El guardia de seguridad de roles (AUTORIZACIÓN).
+//    Verifica si el usuario tiene permiso ANTES de llegar al controlador.
+//    (En una app real, iría después de app.UseAuthentication()).
+app.UseMiddleware<RoleBasedAccessMiddleware>();
+
 // 3. Mapeamos las rutas a los controladores
 app.MapControllers();
 
